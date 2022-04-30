@@ -1,4 +1,4 @@
-package com.vlsm;
+package com.flsm;
 
 public class ipv4Address {
     private int[] ip;
