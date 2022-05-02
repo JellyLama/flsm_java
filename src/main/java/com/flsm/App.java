@@ -8,12 +8,20 @@ public class App {
 
         // user input for ip and sm
         System.out.println("===================================================");
-        System.out.println("-Enter ip address: ");
         Scanner scanner = new Scanner(System.in);
-        String starterIp = scanner.next();
+        String starterIp = "";
+        boolean valid = false;
+        while(!valid){
+            System.out.println("-Enter ip address: ");
+            starterIp = scanner.next();
+            valid = ipv4Address.validateIpv4(starterIp);
+
+            if(!valid)
+                System.out.println("INVALID IP ADDRESS!");
+        }
         System.out.println("-Enter subnet mask: ");
         String starterSm = scanner.next();
-
+        
         // user input for number of LANs and number of HOSTs for each LAN
         System.out.println("-Enter the number of LANs: ");
         int nLan = scanner.nextInt();

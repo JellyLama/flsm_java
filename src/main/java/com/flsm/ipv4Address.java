@@ -110,6 +110,12 @@ public class ipv4Address {
         return networkId;
     }
 
+    public static boolean validateIpv4(String ip) {
+        String PATTERN = "^((0|1\\d?\\d?|2[0-4]?\\d?|25[0-5]?|[3-9]\\d?)\\.){3}(0|1\\d?\\d?|2[0-4]?\\d?|25[0-5]?|[3-9]\\d?)$";
+    
+        return ip.matches(PATTERN);
+    }
+
     public String toString() {
         int[] broadcastIp = this.getBroadcastIp();
         int[] networkId = this.getNetworkId();
